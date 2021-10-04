@@ -15,17 +15,22 @@ class _TimerState extends State<Timer> {
   MediaQueryData? queryData;
   Color bgcolor = Colors.white;
   var interval = Get.arguments['tit'];
-  int _counter = 0;
-  int tit=2;
+  var tit = Get.arguments['it'];
+  var i;
+
 
   void _incrementCounter() {
     setState((){
-      _counter++;
+      //_counter++;
+
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    i=interval.replaceAll(RegExp(r'[^\w\s]+'),'');
+    print(i);
+    
     queryData = MediaQuery.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -97,7 +102,7 @@ class _TimerState extends State<Timer> {
                         icon: const Icon(Icons.stop,size: 40),
                         color: Colors.white,
                         onPressed: () {
-
+                          Get.toNamed("/success/");
                         },
                       ),
                     ),
