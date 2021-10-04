@@ -16,7 +16,7 @@ class _TimerState extends State<Timer> {
   Color bgcolor = Colors.white;
   var interval = Get.arguments['tit'];
   int _counter = 0;
-  int tit=1;
+  int tit=2;
 
   void _incrementCounter() {
     setState((){
